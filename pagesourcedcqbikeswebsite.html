@@ -1,0 +1,3031 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DCQ Bikes - Fietsenwinkel in Jabbeke gespecialiseerd in elektrische fietsen, stadsfietsen en grasmaaiers.">
+    <title>DCQ Bikes - Fietsenwinkel in Jabbeke</title>
+    
+    <!-- Open Graph / Facebook -->
+    <!-- TODO: Update URLs to https://dcqbikes.be/ when domain is live -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://msonsite.github.io/dcqbikes/">
+    <meta property="og:title" content="DCQ Bikes - Fietsenwinkel in Jabbeke">
+    <meta property="og:description" content="Uw betrouwbare partner voor elektrische fietsen, stadsfietsen en grasmaaiers. Professioneel onderhoud en herstellingen in Jabbeke.">
+    <meta property="og:image" content="https://msonsite.github.io/dcqbikes/images/logo/dcqbikeslogotransparent.png">
+    <meta property="og:image:secure_url" content="https://msonsite.github.io/dcqbikes/images/logo/dcqbikeslogotransparent.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="nl_BE">
+    <meta property="og:site_name" content="DCQ Bikes">
+    
+    <!-- Twitter Card -->
+    <!-- TODO: Update URLs to https://dcqbikes.be/ when domain is live -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://msonsite.github.io/dcqbikes/">
+    <meta name="twitter:title" content="DCQ Bikes - Fietsenwinkel in Jabbeke">
+    <meta name="twitter:description" content="Uw betrouwbare partner voor elektrische fietsen, stadsfietsen en grasmaaiers. Professioneel onderhoud en herstellingen in Jabbeke.">
+    <meta name="twitter:image" content="https://msonsite.github.io/dcqbikes/images/logo/dcqbikeslogotransparent.png">
+    <meta name="twitter:image:alt" content="DCQ Bikes Logo">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="keywords" content="fietsenwinkel, elektrische fietsen, stadsfietsen, grasmaaiers, fietsonderhoud, fietsherstelling, Jabbeke, DCQ Bikes">
+    <meta name="author" content="DCQ Bikes">
+    <meta name="robots" content="index, follow">
+    <!-- TODO: Update to https://dcqbikes.be/ when domain is live -->
+    <link rel="canonical" href="https://msonsite.github.io/dcqbikes/">
+    
+    <!-- Favicons - Following Google's Guidelines -->
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon/web-app-manifest-512x512.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dcq-black': '#010101',
+                        'dcq-white': '#fffefc',
+                        'dcq-red': '#ee2726'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            --font-heading: "Inter Tight", "Roboto Condensed", system-ui, sans-serif;
+        }
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body { font-family: var(--font-body); }
+        
+        /* Cookie Banner Styles */
+        #cookieBanner {
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        #cookieBanner.show {
+            transform: translateY(0);
+        }
+        
+        /* Smooth fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Gallery Immersive Masonry Layout */
+        .gallery-masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: 250px;
+            grid-auto-flow: row dense;
+            gap: 0.5rem;
+            padding: 0;
+            width: 100%;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: #000;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+        
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            pointer-events: auto;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+        }
+        
+        /* Prevent image selection and dragging globally */
+        img {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+        }
+        
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.1);
+        }
+        
+        /* Different tile sizes for dynamic layout */
+        .gallery-item.wide {
+            grid-column: span 2;
+        }
+        
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+        
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        /* Overlay on hover */
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(238, 39, 38, 0);
+            transition: background 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .gallery-item:hover::after {
+            background: rgba(238, 39, 38, 0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-masonry-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-auto-rows: 200px;
+                gap: 0.25rem;
+            }
+            
+            .gallery-item.wide,
+            .gallery-item.large {
+                grid-column: span 1;
+            }
+            
+            .gallery-item.tall,
+            .gallery-item.large {
+                grid-row: span 1;
+            }
+        }
+        
+        /* Legacy masonry grid (for backwards compatibility) */
+        .masonry-grid {
+            column-gap: 1rem;
+        }
+
+        /* Apply heading font to main headings/titles */
+        h1, h2, h3, .brand-row-title {
+            font-family: var(--font-heading);
+        }
+        
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 4;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        
+        @media (min-width: 640px) and (max-width: 767px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(1, 1, 1, 0.9);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal.show {
+            display: flex;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9998;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(1, 1, 1, 0.95);
+            animation: fadeIn 0.3s;
+        }
+        
+        .lightbox.show {
+            display: flex;
+        }
+        
+        /* Hero Video Overlay */
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 100%);
+        }
+        
+        /* Enhanced text readability */
+        #home .hero-title-gradient {
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+        }
+        
+        #home .text-dcq-white {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Video optimization */
+        #heroVideo {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            #heroVideo {
+                object-fit: cover;
+            }
+            
+            .hero-overlay {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.6) 100%);
+            }
+        }
+        
+        /* Hero Title Gradient */
+        .hero-title-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #d1d5db 30%, #9ca3af 50%, #d1d5db 70%, #ffffff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+            animation: none !important;
+        }
+        
+        /* Service Hero Section - Electric Bikes */
+        .service-hero {
+            position: relative;
+            min-height: 280px;
+            padding: 3rem 2rem;
+            margin: 0;
+            background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+        
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--bg-image, none);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(4px);
+            z-index: 0;
+            transform: scale(1.05);
+        }
+        
+        .service-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: 1;
+        }
+        
+        .service-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .service-hero-icon {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+            background: transparent;
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: none;
+            border: none;
+            margin: 0 auto 1rem;
+            font-weight: 300;
+            opacity: 0.6;
+        }
+        
+        .service-hero-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .service-hero-description strong {
+            color: #ee2726;
+            font-weight: 600;
+        }
+        
+        .service-hero-brands {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+        }
+        
+        .service-hero-brands .brand-logo-link {
+            display: inline-block;
+            text-decoration: none;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
+            min-width: 44px;
+            min-height: 44px;
+        }
+        
+        .service-hero-brands .brand-logo-link:hover .brand-logo {
+            background: rgba(255, 255, 255, 0.75);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        .service-hero-brands .brand-logo-link:active .brand-logo {
+            transform: scale(0.97);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        .service-hero-brands .brand-logo {
+            width: 140px;
+            height: 70px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.65);
+            padding: 0.75rem 1rem;
+            border-radius: 16px;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero-brands {
+                gap: 1rem;
+                padding: 0.75rem;
+            }
+            
+            .service-hero-brands .brand-logo-link {
+                min-width: 44px;
+                min-height: 44px;
+            }
+            
+            .service-hero-brands .brand-logo {
+                width: 110px;
+                height: 60px;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+        
+        /* Disable hover effects on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            .service-hero-brands .brand-logo-link:hover .brand-logo {
+                background: rgba(255, 255, 255, 0.65);
+                border-color: rgba(255, 255, 255, 0.5);
+                box-shadow: 
+                    0 8px 32px rgba(0, 0, 0, 0.12),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            }
+            
+            .service-hero-brands .brand-logo-link:active .brand-logo {
+                transform: scale(0.95);
+                background: rgba(255, 255, 255, 0.7);
+            }
+        }
+        
+        /* Decision Tree Button - Glassmorphic iOS Style */
+        #decisionTreeBtn {
+            background: rgba(255, 255, 255, 0.65) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.5) !important;
+            border-radius: 16px !important;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+            color: #1f2937 !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        #decisionTreeBtn:hover {
+            background: rgba(255, 255, 255, 0.75) !important;
+            border-color: rgba(255, 255, 255, 0.6) !important;
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+            transform: scale(1.02) !important;
+        }
+        
+        #decisionTreeBtn:active {
+            transform: scale(0.98) !important;
+            background: rgba(255, 255, 255, 0.7) !important;
+        }
+        
+        /* Disable hover effects on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            #decisionTreeBtn:hover {
+                background: rgba(255, 255, 255, 0.65) !important;
+                border-color: rgba(255, 255, 255, 0.5) !important;
+                box-shadow: 
+                    0 8px 32px rgba(0, 0, 0, 0.12),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+                transform: none !important;
+            }
+            
+            #decisionTreeBtn:active {
+                transform: scale(0.97) !important;
+                background: rgba(255, 255, 255, 0.7) !important;
+            }
+        }
+        
+        .service-hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        
+        .feature-badge {
+            background: transparent;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: none;
+        }
+        
+        /* Services Card Grid */
+        .services-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            background: #f9fafb;
+        }
+        
+        .service-card {
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--bg-image, none);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            border-radius: 12px;
+            z-index: 0;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .service-card > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card-icon {
+            font-size: 2.5rem;
+            color: #ee2726;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .service-card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-card-text {
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 1024px) {
+            .service-hero {
+                min-height: 240px;
+                padding: 2rem 1.5rem;
+            }
+            
+            .service-hero-title {
+                font-size: 1.75rem;
+            }
+            
+            .service-hero-description {
+                font-size: 1rem;
+        }
+        
+            .services-card-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero {
+                min-height: 220px;
+                padding: 1.5rem 1rem;
+            }
+            
+            .service-hero-icon {
+                font-size: 0.9rem;
+                width: auto;
+                height: auto;
+                opacity: 0.5;
+            }
+            
+            .service-hero-title {
+                font-size: 1.5rem;
+            }
+            
+            .service-hero-description {
+                font-size: 0.9rem;
+            }
+            
+            .service-hero-features {
+                gap: 0.5rem;
+            }
+            
+            .feature-badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .services-card-grid {
+                grid-template-columns: 1fr;
+                padding: 0.75rem;
+                gap: 0.75rem;
+            }
+            
+            .service-card {
+                padding: 1rem;
+                height: 160px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            
+            .service-card-icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .service-card-title {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .service-card-text {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin-bottom: 0;
+            }
+        }
+        
+        /* FAQ Section Styles - Complete Redesign */
+        .faq-item {
+            transition: all 0.2s ease;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: white;
+            border-color: #d1d5db;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .faq-question:focus {
+            outline: none;
+        }
+        
+        .faq-question .fa-plus {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .faq-item.active .faq-question .fa-plus {
+            transform: rotate(45deg);
+        }
+        
+        .faq-item.active .faq-question > div {
+            background-color: #ee2726;
+        }
+        
+        .faq-item.active .faq-question > div .fa-plus {
+            color: white;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        .faq-item.active .faq-answer.hidden {
+            display: block;
+        }
+        
+        /* Desktop: Use maximum horizontal space */
+        @media (min-width: 768px) {
+            #faqContent {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .faq-item {
+                height: fit-content;
+            }
+            
+            .faq-question {
+                min-height: auto;
+            }
+        }
+        
+        /* FAQ Section Collapsible */
+        #faqContent {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.3s ease;
+            opacity: 0;
+        }
+        
+        #faqContent.show {
+            max-height: 5000px;
+            opacity: 1;
+        }
+        
+        #faqToggleIcon {
+            transition: transform 0.3s ease;
+        }
+        
+        #faqToggleBtn.expanded #faqToggleIcon {
+            transform: rotate(180deg);
+        }
+        
+        /* Decision Tree Modal Styles */
+        #decisionTreeModal {
+            display: flex;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        #decisionTreeModal.show {
+            opacity: 1;
+        }
+        
+        #decisionTreeModal.hidden {
+            display: none;
+        }
+        
+        .decision-tree-step {
+            animation: fadeInUp 0.3s ease;
+        }
+        
+        .decision-tree-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            width: 100%;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: 
+                0 4px 16px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        .decision-tree-option:hover {
+            border-color: rgba(238, 39, 38, 0.3);
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+        }
+        
+        .decision-tree-option:active {
+            transform: translateY(0) scale(0.98);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 2px 8px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Prevent hover state from persisting on mobile after tap */
+        @media (hover: none) and (pointer: coarse) {
+            .decision-tree-option:hover {
+                border-color: rgba(0, 0, 0, 0.08);
+                background: rgba(255, 255, 255, 0.7);
+                box-shadow: 
+                    0 4px 16px rgba(0, 0, 0, 0.08),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+                transform: none;
+            }
+            
+            .decision-tree-option:active {
+                transform: scale(0.97);
+                background: rgba(255, 255, 255, 0.8);
+                border-color: rgba(238, 39, 38, 0.2);
+            }
+        }
+        
+        .decision-tree-option i {
+            color: #ee2726;
+            font-size: 1.25rem;
+            width: 2rem;
+            flex-shrink: 0;
+        }
+        
+        .decision-tree-result {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(238, 39, 38, 0.2);
+            border-radius: 16px;
+            margin-top: 1rem;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        .decision-tree-result h3 {
+            color: #ee2726;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        
+        .decision-tree-result .action-btn {
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(238, 39, 38, 0.9);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 4px 16px rgba(238, 39, 38, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .decision-tree-result .action-btn:hover {
+            background: rgba(212, 30, 29, 0.95);
+            box-shadow: 
+                0 8px 24px rgba(238, 39, 38, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .decision-tree-result .action-btn:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 
+                0 2px 8px rgba(238, 39, 38, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Close button */
+        #closeDecisionTree {
+            background: rgba(255, 255, 255, 0.7) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            border-radius: 50% !important;
+            box-shadow: 
+                0 4px 16px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        #closeDecisionTree:hover {
+            background: rgba(255, 255, 255, 0.85) !important;
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+            transform: scale(1.05) !important;
+        }
+        
+        #closeDecisionTree:active {
+            transform: scale(0.95) !important;
+            background: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        /* Navigation buttons */
+        #decisionTreeBack,
+        #decisionTreeReset {
+            background: rgba(255, 255, 255, 0.7) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            border-radius: 12px !important;
+            padding: 0.625rem 1rem !important;
+            box-shadow: 
+                0 4px 16px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            font-weight: 500 !important;
+        }
+        
+        #decisionTreeBack:hover {
+            background: rgba(255, 255, 255, 0.85) !important;
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        #decisionTreeReset {
+            color: #ee2726 !important;
+        }
+        
+        #decisionTreeReset:hover {
+            background: rgba(255, 255, 255, 0.85) !important;
+            border-color: rgba(238, 39, 38, 0.2) !important;
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        #decisionTreeBack:active,
+        #decisionTreeReset:active {
+            transform: translateY(0) scale(0.98) !important;
+            background: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        /* Disable hover effects on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            #closeDecisionTree:hover,
+            #decisionTreeBack:hover,
+            #decisionTreeReset:hover,
+            .decision-tree-result .action-btn:hover {
+                transform: none !important;
+            }
+            
+            #closeDecisionTree:active,
+            #decisionTreeBack:active,
+            #decisionTreeReset:active,
+            .decision-tree-result .action-btn:active {
+                transform: scale(0.97) !important;
+            }
+        }
+        
+        /* Counter Styles for Hero Section */
+        #customerCounter,
+        #yearsCounter {
+            transition: none;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.05em;
+        }
+        
+        @media (max-width: 768px) {
+            #customerCounter,
+            #yearsCounter {
+                min-width: 100px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            #customerCounter,
+            #yearsCounter {
+                min-width: 140px;
+            }
+        }
+        
+        /* Opening Hours Single Line */
+        .hours-single-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 0.75rem;
+            padding: 0.5rem 1rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            border-radius: 9999px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        
+        @keyframes pulse-clock {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Mobile & Tablet Tweaks */
+        @media (max-width: 1024px) {
+            .hours-single-line {
+                max-width: 900px;
+                gap: 0.6rem;
+                padding: 0.5rem 0.9rem;
+            }
+            #brands-large.brand-row {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 140px));
+            }
+            #brands-medium.brand-row {
+                grid-template-columns: repeat(auto-fit, minmax(105px, 105px));
+            }
+            #brands-small.brand-row {
+                grid-template-columns: repeat(auto-fit, minmax(75px, 75px));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hours-single-line {
+                max-width: 100%;
+                width: 100%;
+                gap: 0;
+                padding: 0.5rem 0;
+                border-radius: 0;
+                font-size: 0.875rem;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+            .opening-hours-icon,
+            .opening-hours-text {
+                display: none;
+            }
+            .brand-row {
+                display: grid;
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+                gap: 0.35rem;
+                padding: 0;
+            }
+            .brand-item {
+                width: 100%;
+                height: 48px;
+                padding: 0.15rem;
+                border-radius: 8px;
+            }
+            .brand-item .brand-overlay { display: none; }
+            .store-status {
+                margin: 0;
+                padding: 0.2rem 0.6rem;
+            }
+        }
+
+        /* Mobile brand marquee (infinite, non-interactive) */
+        @media (max-width: 768px) {
+            .brand-marquee {
+                overflow: hidden;
+                pointer-events: none; /* non-interactive */
+                -webkit-mask-image: linear-gradient(to right, transparent, rgba(0,0,0,1) 8%, rgba(0,0,0,1) 92%, transparent);
+                        mask-image: linear-gradient(to right, transparent, rgba(0,0,0,1) 8%, rgba(0,0,0,1) 92%, transparent);
+            }
+            .brand-marquee-track {
+                display: flex;
+                width: max-content;
+                align-items: center;
+                gap: 1rem;
+                animation: brands-marquee 50s linear infinite;
+                will-change: transform;
+            }
+            .brand-marquee .brand-item {
+                flex: 0 0 auto;
+                width: 120px;
+                height: 72px;
+                padding: 0.35rem;
+                border-radius: 12px;
+            }
+            .brand-marquee .brand-item img {
+                max-height: 40px;
+            }
+            @keyframes brands-marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+        }
+        
+        /* Store Status Indicator */
+        .store-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-left: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            color: #010101;
+        }
+        
+        .store-status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        
+        .store-status.open .store-status-dot {
+            background-color: #10b981;
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+        }
+        
+        .store-status.warning .store-status-dot {
+            background-color: #f59e0b;
+            box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+        }
+        
+        .store-status.closed .store-status-dot {
+            background-color: #ef4444;
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+        }
+        
+        @keyframes pulse-dot {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            50% {
+                transform: scale(1);
+                box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+        
+        .store-status.warning .store-status-dot {
+            animation: pulse-dot-warning 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-dot-warning {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+            }
+            50% {
+                transform: scale(1);
+                box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+            }
+        }
+        
+        .store-status.closed .store-status-dot {
+            animation: pulse-dot-closed 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-dot-closed {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            }
+            50% {
+                transform: scale(1);
+                box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
+        }
+        
+        /* Brand Section Styles */
+        #brands-large,
+        #brands-medium,
+        #brands-small {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        
+        /* Brand items are now clickable links */
+        .brand-item {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
+        }
+        
+        .brand-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(238, 39, 38, 0.1) 0%, rgba(1, 1, 1, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .brand-item:hover::before {
+            opacity: 1;
+        }
+        
+        @media (min-width: 769px) {
+            .brand-item:hover {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+                transform: translateY(-2px);
+                border-color: rgba(238, 39, 38, 0.15);
+            }
+        }
+        
+        @media (max-width: 768px) {
+        .brand-item:hover {
+            box-shadow: 0 12px 24px rgba(238, 39, 38, 0.2);
+            transform: translateY(-8px) scale(1.05);
+            background: linear-gradient(135deg, #fffefc 0%, #f8f8f8 100%);
+            border: 2px solid rgba(238, 39, 38, 0.3);
+            }
+        }
+        
+        .brand-item-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .brand-item img {
+            width: 100%;
+            height: 100%;
+            max-height: 100px;
+            object-fit: contain;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: none;
+            opacity: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        #brands-large .brand-item img {
+            max-height: 110px;
+        }
+        
+        #brands-medium .brand-item img {
+            max-height: 80px;
+        }
+        
+        #brands-small .brand-item img {
+            max-height: 55px;
+        }
+        
+        @media (min-width: 769px) {
+            .brand-item:hover img {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+        .brand-item:hover img {
+            transform: scale(1.15);
+                opacity: 1;
+            }
+        }
+        
+        .brand-item .brand-overlay {
+            display: none;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Brand Quote Styling */
+        .quote-container {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .quote-text {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        
+        .quote-icon-left,
+        .quote-icon-right {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .quote-icon-left {
+            align-self: flex-start;
+            margin-top: -0.25rem;
+        }
+        
+        .quote-icon-right {
+            align-self: flex-end;
+            margin-bottom: -0.25rem;
+        }
+        
+        .quote-content {
+            flex: 0 1 auto;
+            max-width: calc(100% - 120px);
+        }
+        
+        /* Mobile-specific quote styling - consistent with other subtexts */
+        @media (max-width: 768px) {
+            .quote-container {
+                padding: 0.5rem 1rem;
+            }
+            
+            .quote-text {
+                gap: 0.5rem;
+            }
+            
+            .quote-icon-left,
+            .quote-icon-right {
+                font-size: 1rem !important; /* text-base */
+                opacity: 0.7;
+                flex-shrink: 0;
+            }
+            
+            .quote-content {
+                font-size: 1.125rem !important; /* text-lg - matches other subtexts */
+                flex: 1 1 auto;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .quote-container {
+                padding: 0.75rem 0;
+            }
+            
+            .quote-text {
+                gap: 1rem;
+            }
+            
+            .quote-icon-left,
+            .quote-icon-right {
+                opacity: 0.8;
+            }
+            
+            .quote-icon-left {
+                margin-top: -0.5rem;
+            }
+            
+            .quote-icon-right {
+                margin-bottom: -0.5rem;
+            }
+        }
+        
+        /* About Section Background Image */
+        #about {
+            position: relative;
+        }
+        
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+            background-image: url('gallerysection/picture7.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        #about > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Brand Section Styles - Desktop */
+        @media (min-width: 769px) {
+            /* Fixed width container for all brand rows */
+        .brand-row-container {
+                margin-bottom: 1rem;
+                padding: 0;
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .brand-row-container:last-child {
+                margin-bottom: 0;
+        }
+        
+        .brand-row-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #333;
+            letter-spacing: -0.01em;
+            }
+            
+            /* Brand rows with equal width and evenly distributed items */
+            .brand-row {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                padding: 0.75rem 0;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            /* Ensure all brand items fill available space evenly */
+            #brands-large .brand-item {
+                flex: 1 1 0;
+                min-width: 0;
+            }
+            
+            #brands-medium .brand-item {
+                flex: 1 1 0;
+                min-width: 0;
+            }
+            
+            #brands-small .brand-item {
+                flex: 1 1 0;
+                min-width: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .brand-row-container {
+                margin-bottom: 3rem;
+        }
+        
+        .brand-row {
+            display: grid;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            #brands-large.brand-row,
+            #brands-medium.brand-row,
+            #brands-small.brand-row {
+                grid-template-columns: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+        #brands-large.brand-row {
+                grid-template-columns: repeat(auto-fit, minmax(145px, 145px));
+        }
+        
+        #brands-medium.brand-row {
+                grid-template-columns: repeat(auto-fit, minmax(110px, 110px));
+        }
+        
+        #brands-small.brand-row {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 80px));
+            }
+        }
+        
+        /* Brand Item Styles - Adaptive Size Boxes */
+        @media (min-width: 769px) {
+        .brand-item {
+                width: 100%;
+                aspect-ratio: 16 / 10;
+                min-height: 95px;
+            background: white;
+            border-radius: 12px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+                border: 1px solid rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                padding: 0.75rem;
+                transition: all 0.3s cubic-bezier(0.28, 0.11, 0.32, 1);
+        }
+            
+            /* Adaptive heights based on available width */
+            #brands-large .brand-item {
+                min-height: 110px;
+                padding: 1rem;
+        }
+        
+        #brands-medium .brand-item {
+                min-height: 85px;
+                padding: 0.6rem;
+        }
+        
+        #brands-small .brand-item {
+                min-height: 70px;
+            padding: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .brand-item {
+                width: 145px;
+                height: 95px;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                overflow: hidden;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: default;
+                flex-shrink: 0;
+                padding: 0.75rem;
+            }
+        }
+        
+        .brand-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        @media (max-width: 768px) { .brand-item img { max-height: 24px; } }
+        
+        .brand-item .brand-overlay {
+            display: none;
+        }
+        
+        /* Mobile Horizontal Scroll */
+        @media (max-width: 768px) {
+            .brand-row {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none;
+                gap: 1rem;
+                padding: 0.5rem 0;
+            }
+            
+            .brand-row::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .brand-item {
+                scroll-snap-align: start;
+                flex-shrink: 0;
+            }
+            
+            #brands-large.brand-row,
+            #brands-medium.brand-row,
+            #brands-small.brand-row {
+                grid-template-columns: none;
+            }
+        }
+        
+        /* Contact Section Height Matching */
+        @media (min-width: 1024px) {
+            #contact .contact-form-container {
+                min-height: 400px;
+            }
+            
+            #contact .contact-form-container textarea {
+                min-height: 140px;
+            }
+        }
+        
+        /* Team Container Styles */
+        
+        /* Contact Section Box Styles - Red top border */
+        .contact-box {
+            border-top: 3px solid #ee2726;
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+        }
+        
+        /* Contact section phone buttons hover */
+        a[href^="tel:"]:hover {
+            background: rgba(255, 255, 255, 0.85) !important;
+            border-color: rgba(238, 39, 38, 0.2) !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+            color: #ee2726 !important;
+        }
+        
+        a[href^="tel:"]:active {
+            transform: scale(0.98) !important;
+        }
+        
+        /* Contact form submit button hover */
+        #contactSubmit:hover {
+            background: rgba(212, 30, 29, 0.95) !important;
+            box-shadow: 0 8px 24px rgba(238, 39, 38, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+        }
+        
+        #contactSubmit:active {
+            transform: scale(0.98) !important;
+        }
+        
+        /* Form inputs focus state */
+        #contactForm input:focus,
+        #contactForm textarea:focus {
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 4px 12px rgba(238, 39, 38, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+            border-color: rgba(238, 39, 38, 0.3) !important;
+        }
+        
+        /* Disable hover effects on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            a[href^="tel:"]:hover,
+            #contactSubmit:hover,
+            .award-box:hover,
+            .media-box:hover,
+            .team-container:hover {
+                transform: none !important;
+            }
+            
+            a[href^="tel:"]:active,
+            #contactSubmit:active {
+                transform: scale(0.97) !important;
+            }
+            
+            .award-box:active,
+            .media-box:active {
+                transform: scale(0.98) !important;
+            }
+        }
+        
+        /* Award Box Styles */
+        .award-box {
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            min-height: 100%;
+            background: rgba(255, 255, 255, 0.7) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Media Box Styles */
+        .media-box {
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.7) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Custom scrollbar for media box articles */
+        .media-box .space-y-4::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .media-box .space-y-4::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .media-box .space-y-4::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+        
+        .media-box .space-y-4::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .team-container {
+            background: rgba(255, 255, 255, 0.7) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+            border-radius: 16px !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+        
+        .award-box:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1);
+            border-color: rgba(0, 0, 0, 0.12);
+        }
+        
+        .media-box:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+            border-color: rgba(0, 0, 0, 0.12) !important;
+            transform: none !important;
+        }
+        
+        .award-box a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: stretch;
+            min-height: 100%;
+            cursor: pointer;
+        }
+        
+        .award-box a:hover {
+            text-decoration: none;
+        }
+        
+        .award-box .external-link-icon {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            color: #ee2726;
+            font-size: 0.875rem;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .award-box:hover .external-link-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .award-logo-side {
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0.5rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .award-logo-side {
+                left: 1rem;
+                width: 60px;
+            }
+            
+            /* Desktop award box - Clean Apple style */
+            .award-box {
+                background: #ffffff;
+            }
+            
+            .award-box:hover {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                transform: translateY(-2px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+        }
+        
+        /* Media Box Styles */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .award-logo-side img {
+            height: 100%;
+            max-height: 100px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(20%);
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+        
+        .award-box:hover .award-logo-side img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .award-content {
+            margin-left: calc(60px + 1rem);
+            padding: 1rem;
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .award-content {
+                margin-left: calc(60px + 1rem);
+            }
+        }
+        
+        .award-box img:not(.award-logo-side img) {
+            filter: grayscale(20%);
+            transition: all 0.3s ease;
+        }
+        
+        .award-box:hover img:not(.award-logo-side img) {
+            filter: grayscale(0%);
+        }
+        
+        @media (max-width: 768px) {
+            .award-logo-side {
+                left: 1rem;
+                width: 60px;
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .award-logo-side img {
+                max-height: 70px;
+            }
+            
+            .award-content {
+                margin-left: calc(60px + 1rem);
+                padding: 0.75rem;
+            }
+            
+            .award-content p {
+                font-size: 0.7rem;
+            }
+        }
+        
+        /* Team Showcase Styles */
+        .team-showcase {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 640px) {
+            .team-showcase {
+                gap: 3rem;
+                flex-wrap: nowrap;
+            }
+        }
+        
+        .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .team-member-photo-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes subtle-glow {
+            0%, 100% {
+                box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08), 
+                            0 8px 32px rgba(0, 0, 0, 0.04),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            }
+            50% {
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10), 
+                            0 12px 48px rgba(0, 0, 0, 0.05),
+                            0 0 0 1px rgba(238, 39, 38, 0.06),
+                            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            }
+        }
+        
+        .team-member-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 2;
+            transition: none;
+        }
+        
+        /* Removed hover effects - team members are not clickable */
+        .team-member:hover .team-member-photo {
+            transform: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+        
+        .team-member-name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #111827;
+            margin: 0.75rem 0 0.5rem 0;
+            transition: none;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .team-member:hover .team-member-name {
+            color: #111827;
+            transform: none;
+        }
+        
+        .team-member-role {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #ffffff;
+            background-color: #ee2726;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            margin-top: 0.5rem;
+            letter-spacing: 0.01em;
+            transition: none;
+            box-shadow: 0 1px 2px rgba(238, 39, 38, 0.2);
+        }
+        
+        .team-member:hover .team-member-role {
+            background-color: #ee2726;
+            transform: none;
+            box-shadow: 0 1px 2px rgba(238, 39, 38, 0.2);
+        }
+        
+        @media (max-width: 639px) {
+            .team-showcase {
+                gap: 1rem;
+            }
+            
+            .team-member {
+                flex: 0 1 auto;
+            }
+            
+            .team-member-photo-wrapper {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .team-member-photo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .team-member-name {
+                font-size: 1rem;
+                margin: 0.5rem 0 0.375rem 0;
+            }
+            
+            .team-member-role {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.65rem;
+            }
+        }
+        
+        /* Designer credit - subtle */
+        .designer-credit {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+        }
+        /* Collapsible chevron rotation */
+        .collapsible[open] .chevron {
+            transform: rotate(180deg);
+        }
+        .designer-credit a {
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            transition: color 250ms ease;
+        }
+        .designer-credit a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: left;
+            opacity: 0.9;
+            transition: transform 220ms cubic-bezier(0.28, 0.11, 0.32, 1);
+        }
+        .designer-credit a:hover {
+            color: #ffffff;
+        }
+        .designer-credit a:hover::after {
+            transform: scaleX(1);
+        }
+        
+        /* Team Member Card Enhancements */
+        .team-member {
+            background: transparent;
+            border: 0;
+            border-radius: 16px;
+            padding: 0.5rem 0.75rem 0.75rem;
+            box-shadow: none;
+            transition: none;
+        }
+        .team-member:hover { transform: none; box-shadow: none; }
+    </style>
+</head>
+<body class="bg-dcq-white text-dcq-black antialiased">
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-dcq-black text-dcq-white p-4 md:p-6 z-50 shadow-lg">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div class="flex-1">
+                    <p class="text-sm md:text-base">
+                        Deze website gebruikt cookies om uw ervaring te verbeteren. Door verder te gaan, stemt u in met ons gebruik van cookies. 
+                        <a href="cookie-policy.html" class="text-dcq-red hover:underline font-medium">Meer informatie</a>
+                    </p>
+                </div>
+                <div class="flex gap-3">
+                    <button id="acceptCookies" class="px-6 py-2 bg-dcq-red text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium">
+                        Accepteren
+                    </button>
+                    <button id="declineCookies" class="px-6 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors font-medium">
+                        Weigeren
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Ribbon -->
+    <div class="bg-dcq-red text-dcq-white text-sm py-2">
+        <div class="hours-single-line">
+            <i class="fas fa-clock text-dcq-white opening-hours-icon"></i>
+            <span class="opening-hours-text">Di-Vr: 09:00-12:00, 13:30-18:00 | Za: 09:00-12:00, 13:30-17:00 | Ma & Zo: Gesloten</span>
+            <div id="storeStatus" class="store-status">
+                <span class="store-status-dot"></span>
+                <span class="store-status-text">Bezig met laden...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav id="mainNav" class="sticky top-0 bg-dcq-black shadow-md z-40 transition-all">
+        <div class="container mx-auto max-w-7xl px-4 md:px-6">
+            <div class="flex items-center justify-between py-4">
+                <a href="#home" class="flex items-center gap-2">
+                    <img src="images/logo/dcqlogo_blackbackground.jpg" alt="DCQ Bikes logo" class="h-10 md:h-12 object-contain">
+                </a>
+                <div class="hidden md:flex items-center gap-8 text-dcq-white">
+                    <a href="#home" class="text-dcq-white hover:text-dcq-red transition-colors font-medium">Home</a>
+                    <a href="#services" class="text-dcq-white hover:text-dcq-red transition-colors font-medium">Aanbod</a>
+                    <a href="#brands" class="text-dcq-white hover:text-dcq-red transition-colors font-medium">Merken</a>
+                    <a href="#gallery" class="text-dcq-white hover:text-dcq-red transition-colors font-medium">Galerij</a>
+                    <a href="#about" class="text-dcq-white hover:text-dcq-red transition-colors font-medium">Over Ons</a>
+                    <a href="#contact" class="text-dcq-white hover:text-dcq-red transition-colors font-medium">Contact</a>
+                    <a href="#faq" class="text-dcq-white hover:text-dcq-red transition-colors font-medium">FAQ</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-dcq-white hover:text-dcq-red transition-colors">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-2 bg-dcq-black">
+                <div class="flex flex-col gap-1">
+                    <a href="#home" class="text-dcq-white hover:text-dcq-red transition-colors font-medium py-1.5 text-sm">Home</a>
+                    <a href="#services" class="text-dcq-white hover:text-dcq-red transition-colors font-medium py-1.5 text-sm">Aanbod</a>
+                    <a href="#brands" class="text-dcq-white hover:text-dcq-red transition-colors font-medium py-1.5 text-sm">Merken</a>
+                    <a href="#gallery" class="text-dcq-white hover:text-dcq-red transition-colors font-medium py-1.5 text-sm">Galerij</a>
+                    <a href="#about" class="text-dcq-white hover:text-dcq-red transition-colors font-medium py-1.5 text-sm">Over Ons</a>
+                    <a href="#contact" class="text-dcq-white hover:text-dcq-red transition-colors font-medium py-1.5 text-sm">Contact</a>
+                    <a href="#faq" class="text-dcq-white hover:text-dcq-red transition-colors font-medium py-1.5 text-sm">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-[70vh] md:h-[75vh] lg:h-[70vh] overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" id="heroVideo">
+            <source src="videos/herovideo.mp4" type="video/mp4">
+            <!-- Fallback image shown via JS if video fails -->
+        </video>
+        <div class="hero-overlay absolute inset-0 flex flex-col items-center justify-center">
+            <div class="text-center px-4 z-10 fade-in">
+                <div class="mb-6 flex justify-center">
+                    <img src="images/logo/dcqbikeslogotransparent.png" alt="DCQ Bikes" class="h-20 md:h-32 lg:h-40 w-auto object-contain drop-shadow-lg">
+                </div>
+            <!--    <p class="text-xl md:text-2xl lg:text-3xl text-dcq-white/95 mb-2 font-light tracking-wide drop-shadow-lg">
+                    Waar passie en precisie samenkomen
+                </p> -->
+                <p class="text-sm md:text-base text-dcq-white/80 mb-8 tracking-[0.15em] uppercase">
+                    Elektrische Fietsen • Stadsfietsen • Grasmaaiers
+                </p>
+                
+                <!-- Counters in Hero -->
+                <div class="flex flex-row items-center justify-center gap-6 md:gap-12 mb-8">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-1 text-dcq-white drop-shadow-lg" id="customerCounter">
+                            +0
+                        </h2>
+                        <p class="text-sm md:text-base text-dcq-white/90 font-medium">
+                            tevreden klanten
+                        </p>
+                    </div>
+                    <div class="w-px h-10 md:h-12 bg-dcq-white/30"></div>
+                    <div>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-1 text-dcq-white drop-shadow-lg" id="yearsCounter">
+                            +20
+                        </h2>
+                        <p class="text-sm md:text-base text-dcq-white/90 font-medium">
+                            jaar ervaring
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col items-center gap-3">
+                    <button id="decisionTreeBtn" class="inline-flex items-center gap-3 px-10 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-semibold text-lg hover:bg-white/20 hover:scale-105 transition-all border-2 border-white/30 shadow-lg">
+                        <i class="fas fa-compass text-sm"></i>
+                        Wat heeft u nodig?
+                    </button>
+                    <a href="#services" class="text-white/80 hover:text-white text-sm font-medium transition-colors underline underline-offset-4 decoration-white/50 hover:decoration-white/80">
+                        Browse alles
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decision Tree Modal -->
+    <div id="decisionTreeModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900">Wat heeft u nodig?</h2>
+                <button id="closeDecisionTree" class="w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors">
+                    <i class="fas fa-times text-gray-500"></i>
+                </button>
+            </div>
+            
+            <!-- Decision Tree Content -->
+            <div class="flex-1 overflow-y-auto p-6">
+                <div id="decisionTreeContent" class="space-y-4">
+                    <!-- Initial question will be inserted here -->
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div id="decisionTreeNav" class="hidden border-t border-gray-200 p-4 flex items-center justify-between">
+                <button id="decisionTreeBack" class="px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i> Terug
+                </button>
+                <button id="decisionTreeReset" class="px-4 py-2 text-dcq-red hover:text-dcq-red/80 transition-colors">
+                    Opnieuw beginnen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-0">
+        <div class="text-center py-6 md:py-10 bg-dcq-white">
+        <div class="container mx-auto max-w-7xl px-4 md:px-6">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 fade-in">Aanbod</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in">
+                    Een breed assortiment aan fietsen, onderdelen en diensten van gerenommeerde merken
+                </p>
+            </div>
+                    </div>
+        <!-- Featured Electric Bikes - Hero Style -->
+        <div class="service-hero service-block service-block-1">
+            <div class="service-hero-content">
+                <div class="service-hero-icon">
+                    <i class="fas fa-bolt"></i>
+                    </div>
+                <h3 class="service-hero-title">Elektrische Fietsen</h3>
+                <p class="service-hero-description">
+                    Breed assortiment van topmerken
+                </p>
+                <div class="service-hero-brands">
+                    <a href="https://www.victoria-bikes.com/nl/" target="_blank" rel="noopener noreferrer" class="brand-logo-link">
+                        <img src="images/brands/large/victoria-groot.png" alt="Victoria" class="brand-logo" />
+                    </a>
+                    <a href="https://www.conway-bikes.com/nl/" target="_blank" rel="noopener noreferrer" class="brand-logo-link">
+                        <img src="images/brands/large/conway.png" alt="Conway" class="brand-logo" />
+                    </a>
+                    <a href="https://www.oxfordbikes.be/" target="_blank" rel="noopener noreferrer" class="brand-logo-link">
+                        <img src="images/brands/large/oxfordlogo.webp" alt="Oxford" class="brand-logo" />
+                    </a>
+                    <a href="https://norta.be/nl/home" target="_blank" rel="noopener noreferrer" class="brand-logo-link">
+                        <img src="images/brands/large/norta.png" alt="Norta" class="brand-logo" />
+                    </a>
+                </div>
+                <div class="service-hero-features">
+                    <span class="feature-badge">Verschillende types</span>
+                    <span class="feature-badge">Persoonlijk advies</span>
+                    <span class="feature-badge">Testritten mogelijk</span>
+                    <span class="feature-badge">Professioneel onderhoud</span>
+            </div>
+            </div>
+        </div>
+        
+        
+        <!-- Services Grid - Card Style -->
+        <div class="services-card-grid">
+            <!-- Stadsfietsen -->
+            <div class="service-card service-card-1">
+                <div class="service-card-icon">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <h4 class="service-card-title">Stadsfietsen</h4>
+                <p class="service-card-text">Perfecte fietsen voor dagelijks gebruik in de stad</p>
+            </div>
+            
+            <!-- Onderhoud & Herstel -->
+            <div class="service-card service-card-2">
+                <div class="service-card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                <h4 class="service-card-title">Onderhoud & Herstel</h4>
+                <p class="service-card-text">Professioneel onderhoud en reparaties door ervaren technici</p>
+                </div>
+            
+            <!-- Onderdelen & Accessoires -->
+            <div class="service-card service-card-3">
+                <div class="service-card-icon">
+                    <i class="fas fa-cog"></i>
+                    </div>
+                <h4 class="service-card-title">Onderdelen & Accessoires</h4>
+                <p class="service-card-text">Ruim assortiment aan onderdelen en accessoires</p>
+            </div>
+            
+            <!-- Grasmaaiers & Tuin -->
+            <div class="service-card service-card-4">
+                <div class="service-card-icon">
+                        <i class="fas fa-leaf"></i>
+                </div>
+                <h4 class="service-card-title">Grasmaaiers & Tuin</h4>
+                <p class="service-card-text">Elektrische grasmaaiers en tuinaccessoires</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="py-12 md:py-16 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 md:px-6">
+            <div class="text-center mb-8 md:mb-10 fade-in">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Merken</h2>
+                <div class="quote-container max-w-3xl mx-auto">
+                    <p class="quote-text text-lg font-light text-gray-700 italic leading-relaxed">
+                        Zorgvuldig geselecteerd voor kwaliteit, betrouwbaarheid en prestaties
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Mobile: Infinite marquee carousel (non-interactive) -->
+            <div class="md:hidden fade-in">
+                <div id="brands-mobile" class="brand-marquee">
+                    <div id="brandsMarqueeTrack" class="brand-marquee-track"></div>
+                </div>
+            </div>
+            <!-- Large Brands (Row 1) -->
+            <div class="brand-row-container fade-in hidden md:block">
+                <!--<h3 class="brand-row-title">Hoofdmerken</h3>-->
+                <div id="brands-large" class="brand-row">
+                    <!-- Brand logos will be loaded dynamically -->
+                </div>
+            </div>
+            
+            <!-- Medium Brands (Row 2) -->
+            <div class="brand-row-container fade-in hidden md:block">
+                <!-- Medium Brands (Row 2)<h3 class="brand-row-title">Accessoire Merken</h3>-->
+                <div id="brands-medium" class="brand-row">
+                    <!-- Brand logos will be loaded dynamically -->
+                </div>
+            </div>
+            
+            <!-- Small Brands (Row 3) -->
+            <div class="brand-row-container fade-in hidden md:block">
+            <!--<h3 class="brand-row-title">Partner Merken</h3>-->
+                <div id="brands-small" class="brand-row">
+                    <!-- Brand logos will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Modal -->
+    <div id="brandModal" class="modal" role="dialog" aria-labelledby="brandModalTitle" aria-hidden="true">
+        <div class="m-auto bg-dcq-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 id="brandModalTitle" class="text-2xl font-bold">Merk Informatie</h3>
+                    <button id="closeBrandModal" class="text-gray-500 hover:text-dcq-black text-2xl" aria-label="Sluiten">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="brandModalContent" class="space-y-4">
+                    <!-- Content loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-10 md:py-12 bg-dcq-white overflow-hidden">
+        <div class="text-center mb-6 md:mb-8 fade-in px-4">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Galerij</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Een kijkje in onze winkel
+                </p>
+            </div>
+        <div id="galleryGrid" class="gallery-masonry-grid">
+                <!-- Gallery items loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-label="Afbeelding viewer">
+        <button id="closeLightbox" class="absolute top-4 right-4 text-white text-3xl hover:text-dcq-red z-10" aria-label="Sluiten">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="prevLightbox" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-dcq-red z-10" aria-label="Vorige">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="nextLightbox" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-dcq-red z-10" aria-label="Volgende">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="m-auto max-w-7xl w-full h-full flex items-center justify-center p-4">
+            <img id="lightboxImage" src="" alt="" class="max-w-full max-h-full object-contain">
+            <video id="lightboxVideo" src="" controls class="max-w-full max-h-full object-contain hidden"></video>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 md:py-16 bg-white relative overflow-hidden">
+        <div class="container mx-auto max-w-7xl px-4 md:px-6">
+            <div class="mb-6 md:mb-8 fade-in">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Over DCQ Bikes</h2>
+                <div class="max-w-3xl">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-dcq-red/10 flex items-center justify-center mt-1">
+                            <i class="fas fa-bicycle text-dcq-red text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+                                Bij <span class="font-semibold text-gray-900">DCQ Bikes</span> draait alles om fietsen. Van <span class="text-dcq-red font-medium">snelle reparaties</span> tot <span class="text-dcq-red font-medium">uitgebreide onderhoudsbeurten</span>, van stadsfietsen tot elektrische modellen, wij zorgen ervoor dat u altijd soepel op weg kunt.
+                </p>
+            </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-dcq-red/10 flex items-center justify-center mt-1">
+                            <i class="fas fa-handshake text-dcq-red text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+                                Met onze <span class="font-semibold text-gray-900">lokale expertise</span> en <span class="font-semibold text-gray-900">persoonlijke service</span> staan we klaar om u te helpen, of u nu op zoek bent naar een nieuwe fiets of uw huidig exemplaar weer als nieuw wilt laten lopen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 fade-in">
+                <!-- Award Box -->
+                <div>
+                    <div class="award-box h-full">
+                        <a href="https://www.handelsgids.be/jabbeke/dcq-bikes/vh18/" target="_blank" rel="noopener" class="group block h-full">
+                            <i class="fas fa-external-link-alt external-link-icon"></i>
+                            
+                            <!-- Desktop: Clean Apple-style redesign -->
+                            <div class="hidden md:flex flex-col h-full items-center justify-center p-8 text-center w-full">
+                                <!-- Logo -->
+                                <div class="mb-8 flex justify-center w-full">
+                                    <img src="images/vriendelijkstehandelaar/vriendelijkstehandelaarlogo.png" 
+                                         alt="Vriendelijkste Handelaar Logo" 
+                                         class="h-20 w-auto object-contain">
+                                </div>
+                                
+                                <!-- Main content -->
+                                <div class="mb-8 flex flex-col items-center w-full">
+                                    <p class="text-sm text-gray-500 mb-3 font-light tracking-wide text-center">
+                                        DCQ Bikes werd uitgeroepen tot
+                                    </p>
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-2 leading-tight tracking-tight text-center">
+                                        Vriendelijkste Handelaar
+                                    </h3>
+                                    <p class="text-base text-gray-600 font-light text-center">
+                                        in Jabbeke
+                                    </p>
+                                </div>
+                                
+                                <!-- Divider -->
+                                <div class="w-12 h-px bg-gray-200 mb-8 mx-auto"></div>
+                                
+                                <!-- Issued by -->
+                                <div class="flex flex-col items-center w-full">
+                                    <span class="text-xs text-gray-400 uppercase tracking-widest mb-3 font-light text-center">Uitgereikt door</span>
+                                    <img src="images/vriendelijkstehandelaar/handelsgidslogo.png" 
+                                         alt="Handelsgids Logo" 
+                                         class="h-6 w-auto object-contain opacity-70 mx-auto">
+                                </div>
+                            </div>
+                            
+                            <!-- Mobile: Original layout -->
+                            <div class="md:hidden">
+                                <div class="award-logo-side">
+                                    <img src="images/vriendelijkstehandelaar/vriendelijkstehandelaarlogo.png" 
+                                         alt="Vriendelijkste Handelaar Logo" 
+                                         class="object-contain">
+                                </div>
+                                <div class="award-content">
+                                    <div class="flex flex-col items-center text-center">
+                                        <p class="text-xs font-medium text-gray-700 mb-3">
+                                            DCQ Bikes werd uitgeroepen tot<br>
+                                            <span class="text-dcq-red font-semibold">Vriendelijkste Handelaar</span><br>
+                                            in Jabbeke
+                                        </p>
+                                        <div class="flex items-center justify-center gap-2">
+                                            <span class="text-[10px] font-medium text-gray-500 uppercase tracking-wider">Uitgereikt door</span>
+                                            <img src="images/vriendelijkstehandelaar/handelsgidslogo.png" 
+                                                 alt="Handelsgids Logo" 
+                                                 class="h-5 w-auto object-contain opacity-80">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                    <!-- Team Showcase -->
+                <div>
+                    <div class="team-container p-6 h-full flex flex-col">
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold tracking-tight">Ons Team</h3>
+                                </div>
+                        <div class="team-showcase flex-1 flex items-center justify-center">
+                            <div class="team-member">
+                                <div class="team-member-photo-wrapper">
+                                    <img src="images/profilepictures/kurtdeclercq.png" alt="Kurt Declercq" class="team-member-photo" onerror="this.src='images/profilepictures/kurt.jpg'; this.onerror=null;">
+                            </div>
+                                <div class="team-member-name">Kurt</div>
+                                <div class="team-member-role">Zaakvoerder</div>
+                                </div>
+                            <div class="team-member">
+                                <div class="team-member-photo-wrapper">
+                                    <img src="images/profilepictures/maximehoflack.png" alt="Maxime Hoflack" class="team-member-photo" onerror="this.src='images/profilepictures/maxime.jpg'; this.onerror=null;">
+                            </div>
+                                <div class="team-member-name">Maxime</div>
+                                <div class="team-member-role">Fietstechnicus</div>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                
+                <!-- Media Box -->
+                <div>
+                    <div class="media-box h-full flex flex-col">
+                        <div class="relative p-4 flex items-center justify-center border-b border-gray-200/30 flex-shrink-0" style="background: rgba(249, 250, 251, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+                                <i class="fas fa-newspaper text-4xl text-dcq-red opacity-80"></i>
+                            </div>
+                        <div class="p-5 flex-1 overflow-hidden flex flex-col" style="min-height: 0;">
+                            <div class="space-y-4 flex-1 overflow-y-auto pr-2" style="scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.2) transparent;">
+                                <!-- Pro Sport Lights Article -->
+                                <a href="https://prosportlights.com/blogs/nieuws/dcq-bikes-is-nu-officiele-dealer-van-pro-sport-lights" target="_blank" rel="noopener" class="group block pb-3 border-b border-gray-200/50 last:border-b-0 last:pb-0">
+                                    <div class="flex items-center gap-2 mb-1.5 flex-wrap">
+                                        <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Pro Sport Lights</span>
+                                        <span class="text-xs text-gray-400">•</span>
+                                        <span class="text-xs text-gray-500 italic">2025</span>
+                                        <i class="fas fa-external-link-alt text-xs text-dcq-red opacity-60 group-hover:opacity-100 transition-opacity ml-auto"></i>
+                                    </div>
+                                    <h4 class="text-sm font-bold text-gray-900 mb-1.5 line-clamp-2 group-hover:text-dcq-red transition-colors">
+                                        DCQ Bikes is nu officiële dealer van Pro Sport Lights!
+                                    </h4>
+                                    <p class="text-xs text-gray-600 line-clamp-2">
+                                        Vanaf nu kunt u bij DCQ Bikes terecht voor hoogwaardige Speedpedelec-helmen en krachtige fietsverlichting.
+                                    </p>
+                                </a>
+                                
+                                <!-- HLN Article -->
+                                <a href="https://www.hln.be/jabbeke/doe-mee-aan-de-jabbeekse-eindejaarsactie-en-win-twee-elektrische-fietsen~a0f5783d/" target="_blank" rel="noopener" class="group block pb-3 border-b border-gray-200/50 last:border-b-0 last:pb-0">
+                                    <div class="flex items-center gap-2 mb-1.5 flex-wrap">
+                                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">HLN</span>
+                                    <span class="text-xs text-gray-400">•</span>
+                                    <span class="text-xs text-gray-500">Jabbeke</span>
+                                    <span class="text-xs text-gray-400">•</span>
+                                    <span class="text-xs text-gray-500 italic">2021</span>
+                                        <i class="fas fa-external-link-alt text-xs text-dcq-red opacity-60 group-hover:opacity-100 transition-opacity ml-auto"></i>
+                                </div>
+                                    <div class="mb-1.5">
+                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600">
+                                        <i class="fas fa-archive text-xs mr-1"></i>
+                                            Gearchiveerd
+                                    </span>
+                                </div>
+                                    <h4 class="text-sm font-bold text-gray-900 mb-1.5 line-clamp-2 group-hover:text-dcq-red transition-colors">
+                                    Doe mee aan de Jabbeekse eindejaarsactie en win twee elektrische fietsen
+                                </h4>
+                                    <p class="text-xs text-gray-600 line-clamp-2">
+                                    Gearchiveerd artikel uit 2021 over DCQ Bikes en de lokale eindejaarsactie in Jabbeke.
+                                </p>
+                                </a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 md:py-16 bg-gray-50">
+        <div class="container mx-auto max-w-7xl px-4 md:px-6">
+            <div class="mb-8 md:mb-10 fade-in">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Contact</h2>
+                <p class="text-lg text-gray-600 max-w-2xl">
+                    Kom gerust langs in onze winkel! We helpen u graag persoonlijk.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                <!-- Contact Info -->
+                <div class="space-y-4 md:space-y-6 fade-in">
+                    <div class="contact-box p-6 rounded-2xl h-full flex flex-col" style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <h3 class="text-xl font-bold tracking-tight mb-5">Contactgegevens</h3>
+
+                        <div class="divide-y divide-gray-100">
+                            <div class="py-4 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-dcq-red/10 text-dcq-red flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-sm text-gray-500">Adres</p>
+                                    <a href="https://maps.app.goo.gl/YdC69e1bK61BGsGW7" target="_blank" rel="noopener" class="block font-medium text-gray-900 hover:text-dcq-red">
+                                        Gistelsteenweg 282, 8490 Jabbeke
+                                    </a>
+                                    <p class="text-xs text-gray-500 mt-2 flex items-center gap-1.5">
+                                        <i class="fas fa-exclamation-triangle text-amber-500"></i>
+                                        Let op: trajectcontrole op de Gistelsteenweg (50 km/u)
+                                    </p>
+                            </div>
+                        </div>
+
+                            <div class="py-4 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-dcq-red/10 text-dcq-red flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone"></i>
+                    </div>
+                                <div class="min-w-0 w-full">
+                                    <p class="text-sm text-gray-500">Telefoon</p>
+                                    <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        <a href="tel:+3250814220" class="inline-flex w-full items-center justify-center gap-2 px-3 py-2 rounded-xl text-base font-medium transition-all" style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9); color: #1f2937; touch-action: manipulation; -webkit-tap-highlight-color: transparent;">
+                                            <i class="fas fa-phone"></i> 050 81 42 20
+                                        </a>
+                                        <a href="tel:+32475822376" class="inline-flex w-full items-center justify-center gap-2 px-3 py-2 rounded-xl text-base font-medium transition-all" style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9); color: #1f2937; touch-action: manipulation; -webkit-tap-highlight-color: transparent;">
+                                            <i class="fas fa-mobile-screen"></i> 0475 82 23 76
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="py-4 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-dcq-red/10 text-dcq-red flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-sm text-gray-500">E-mail</p>
+                                    <a href="mailto:info@dcqbikes.be" target="_blank" rel="noopener" class="font-medium text-gray-900 hover:text-dcq-red">info@dcqbikes.be</a>
+                                </div>
+                            </div>
+
+                            <div class="py-4 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-dcq-red/10 text-dcq-red flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="min-w-0 w-full">
+                                    <!-- Mobile: Collapsible dropdown -->
+                                    <details class="collapsible mt-1 md:hidden" open>
+                                        <summary class="text-sm text-gray-600 flex items-center justify-between select-none cursor-pointer">
+                                            <span>Openingsuren</span>
+                                            <i class="fas fa-chevron-down chevron text-gray-400 transition-transform duration-200"></i>
+                                        </summary>
+                                        <div class="mt-2 rounded-md border border-gray-100 bg-gray-50 p-2">
+                                            <div class="grid grid-cols-2 gap-y-1.5 gap-x-3 text-xs leading-5">
+                                                <div class="text-gray-600">Maandag</div>
+                                                <div class="text-gray-500">Gesloten</div>
+                                                <div class="text-gray-600">Dinsdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–18:00</div>
+                                                <div class="text-gray-600">Woensdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–18:00</div>
+                                                <div class="text-gray-600">Donderdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–18:00</div>
+                                                <div class="text-gray-600">Vrijdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–18:00</div>
+                                                <div class="text-gray-600">Zaterdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–17:00</div>
+                                                <div class="text-gray-600">Zondag</div>
+                                                <div class="text-gray-500">Gesloten</div>
+                                            </div>
+                                        </div>
+                                    </details>
+                                    <!-- Desktop: Always visible (no dropdown) -->
+                                    <div class="hidden md:block mt-1">
+                                        <p class="text-sm text-gray-600 mb-2">Openingsuren</p>
+                                        <div class="rounded-md border border-gray-100 bg-gray-50 p-2">
+                                            <div class="grid grid-cols-2 gap-y-1.5 gap-x-3 text-xs leading-5">
+                                                <div class="text-gray-600">Maandag</div>
+                                                <div class="text-gray-500">Gesloten</div>
+                                                <div class="text-gray-600">Dinsdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–18:00</div>
+                                                <div class="text-gray-600">Woensdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–18:00</div>
+                                                <div class="text-gray-600">Donderdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–18:00</div>
+                                                <div class="text-gray-600">Vrijdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–18:00</div>
+                                                <div class="text-gray-600">Zaterdag</div>
+                                                <div class="text-gray-800">09:00–12:00 / 13:30–17:00</div>
+                                                <div class="text-gray-600">Zondag</div>
+                                                <div class="text-gray-500">Gesloten</div>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <div class="contact-box p-6 rounded-2xl contact-form-container h-full flex flex-col" style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <h3 class="text-xl font-bold tracking-tight mb-5">Heeft u een vraag?</h3>
+                        <p class="text-gray-600 mb-6">Stel hier uw vraag en we nemen zo snel mogelijk contact met u op.</p>
+                        <form id="contactForm" class="space-y-4 flex-1 flex flex-col" action="#" data-formspree="https://formspree.io/f/mvgvrjql" method="POST">
+                            <div class="flex-1 space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Naam *</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-xl focus:ring-2 focus:ring-dcq-red focus:border-transparent transition-all" style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">E-mail *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-xl focus:ring-2 focus:ring-dcq-red focus:border-transparent transition-all" style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-2">Bericht *</label>
+                                <textarea id="message" name="message" rows="7" required class="w-full px-4 py-2 rounded-xl focus:ring-2 focus:ring-dcq-red focus:border-transparent transition-all" style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);"></textarea>
+                                </div>
+                            </div>
+                            <input type="hidden" name="_subject" value="Nieuw bericht via DCQ Bikes website">
+                            <input type="text" name="_gotcha" style="display:none">
+                            <div class="mt-auto">
+                            <button id="contactSubmit" type="submit" class="w-full py-3 rounded-xl font-semibold text-white transition-all" style="background: rgba(238, 39, 38, 0.9); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 4px 16px rgba(238, 39, 38, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2); touch-action: manipulation; -webkit-tap-highlight-color: transparent;">
+                                Verzenden
+                            </button>
+                            <p id="contactStatus" class="mt-2 text-sm text-gray-600 hidden" aria-live="polite"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto max-w-2xl md:max-w-7xl px-4 md:px-6">
+            <div class="mb-8 md:mb-10 fade-in">
+                <button id="faqToggleBtn" class="w-full text-left fade-in hover:bg-gray-50 transition-colors rounded-lg p-4 -ml-4">
+                    <div class="flex items-center justify-between gap-3">
+                        <div class="flex-1">
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Veelgestelde vragen</h2>
+                            <p class="text-lg text-gray-600 max-w-2xl">
+                                Klik om de veelgestelde vragen te bekijken
+                            </p>
+                        </div>
+                        <i id="faqToggleIcon" class="fas fa-chevron-down text-dcq-red transition-transform text-2xl flex-shrink-0"></i>
+                    </div>
+                </button>
+            </div>
+
+            <div id="faqContent" class="fade-in hidden mt-6 md:grid md:grid-cols-2 md:gap-4 md:space-y-0 space-y-3">
+
+                <div class="faq-item group">
+                    <button class="faq-question w-full text-left flex items-start justify-between gap-4 p-5 rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200" aria-expanded="false">
+                        <span class="font-semibold text-base text-gray-900 flex-1 leading-snug">Hoe lang duurt een fietsherstelling gemiddeld?</span>
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dcq-red/10 flex items-center justify-center group-hover:bg-dcq-red/20 transition-colors">
+                            <i class="fas fa-plus text-dcq-red text-xs transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-5 pt-0 pb-5 text-gray-700 text-sm leading-relaxed">
+                        <p class="mb-3 text-gray-800">De duur van een herstelling hangt af van het type probleem:</p>
+                        <ul class="list-none space-y-2.5 ml-0">
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Kleine reparaties</strong> (band plakken, remmen stellen): <span class="text-gray-900 font-medium">meestal de volgende dag</span></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Grotere onderhoudsbeurt:</strong> <span class="text-gray-900 font-medium">3-4 werkdagen</span></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Complexe herstellingen:</strong> <span class="text-gray-900 font-medium">5-7 werkdagen</span> (afhankelijk van onderdelen beschikbaarheid)</span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-800">Bij het binnenbrengen geven we altijd een <strong>geschatte oplevertijd</strong>. U ontvangt ook een <span class="text-dcq-red font-medium">SMS</span> wanneer uw fiets klaar is!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item group">
+                    <button class="faq-question w-full text-left flex items-start justify-between gap-4 p-5 rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200" aria-expanded="false">
+                        <span class="font-semibold text-base text-gray-900 flex-1 leading-snug">Welke betalingsmethoden worden geaccepteerd?</span>
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dcq-red/10 flex items-center justify-center group-hover:bg-dcq-red/20 transition-colors">
+                            <i class="fas fa-plus text-dcq-red text-xs transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-5 pt-0 pb-5 text-gray-700 text-sm leading-relaxed">
+                        <p class="text-gray-800 mb-3">Wij accepteren de volgende betalingsmethoden:</p>
+                        <ul class="list-none space-y-2.5 ml-0">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-money-bill-wave text-dcq-red text-base w-5 text-center flex-shrink-0"></i>
+                                <span class="font-medium text-gray-900">Contant geld</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-mobile-alt text-dcq-red text-base w-5 text-center flex-shrink-0"></i>
+                                <span class="font-medium text-gray-900">Bancontact / Bancontact Mobile</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-credit-card text-dcq-red text-base w-5 text-center flex-shrink-0"></i>
+                                <span class="font-medium text-gray-900">Credit- en debetkaarten</span> <span class="text-gray-600">(Visa, Mastercard)</span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-800">Voor <strong>grotere aankopen</strong> kunnen we ook een factuur opstellen voor achteraf betaling.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item group">
+                    <button class="faq-question w-full text-left flex items-start justify-between gap-4 p-5 rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200" aria-expanded="false">
+                        <span class="font-semibold text-base text-gray-900 flex-1 leading-snug">Moet ik een afspraak maken?</span>
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dcq-red/10 flex items-center justify-center group-hover:bg-dcq-red/20 transition-colors">
+                            <i class="fas fa-plus text-dcq-red text-xs transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-5 pt-0 pb-5 text-gray-700 text-sm leading-relaxed">
+                        <p class="text-gray-800 mb-3">Nee, voor de meeste reparaties en vragen kunt u gewoon <strong>langs komen</strong> tijdens onze <a href="#contact" class="text-dcq-red font-semibold hover:underline">openingstijden</a>. Wij helpen u graag persoonlijk!</p>
+                        <p class="text-gray-800 mb-3">Voor <strong>kleine reparaties</strong> kunt u altijd binnenlopen. Voor <strong>grotere herstellingen</strong> of een volledige onderhoudsbeurt kunt u ook gewoon langskomen. We bekijken dan ter plaatse wat er nodig is.</p>
+                        <p class="text-gray-800 mb-3">Als u liever eerst contact opneemt, kunt u een e-mail sturen naar <a href="mailto:info@dcqbikes.be" class="text-dcq-red font-semibold hover:underline">info@dcqbikes.be</a> of bellen op <a href="tel:+3250814220" class="text-dcq-red font-semibold hover:underline">+32 50 81 42 20</a> of <a href="tel:+32475822376" class="text-dcq-red font-semibold hover:underline">+32 475 82 23 76</a>.</p>
+                        <p class="mt-4 text-gray-800">Door langs te komen kunnen we uw fiets <strong>direct bekijken</strong> en u meteen een <strong>geschatte oplevertijd</strong> geven.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item group">
+                    <button class="faq-question w-full text-left flex items-start justify-between gap-4 p-5 rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200" aria-expanded="false">
+                        <span class="font-semibold text-base text-gray-900 flex-1 leading-snug">Onderhoudt DCQ Bikes ook elektrische fietsen?</span>
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dcq-red/10 flex items-center justify-center group-hover:bg-dcq-red/20 transition-colors">
+                            <i class="fas fa-plus text-dcq-red text-xs transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-5 pt-0 pb-5 text-gray-700 text-sm leading-relaxed">
+                        <p class="text-gray-800 mb-3">Ja, wij zijn <strong>gespecialiseerd</strong> in het onderhouden en herstellen van elektrische fietsen van <strong>alle merken</strong>:</p>
+                        <ul class="list-none space-y-2.5 ml-0">
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Batterij controles</strong> en diagnostiek</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Motoronderhoud</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Rem- en versnelling</strong> afstelling</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Software updates</strong> voor displays</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Algemene onderhoudsbeurten</strong></span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-800">Onze technici zijn <strong>gecertificeerd</strong> om te werken met verschillende e-bike systemen (<span class="text-dcq-red font-medium">Bosch, Shimano, Bafang</span>, etc.).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item group">
+                    <button class="faq-question w-full text-left flex items-start justify-between gap-4 p-5 rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200" aria-expanded="false">
+                        <span class="font-semibold text-base text-gray-900 flex-1 leading-snug">Hoe vaak moet ik mijn fiets laten onderhouden?</span>
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dcq-red/10 flex items-center justify-center group-hover:bg-dcq-red/20 transition-colors">
+                            <i class="fas fa-plus text-dcq-red text-xs transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-5 pt-0 pb-5 text-gray-700 text-sm leading-relaxed">
+                        <p class="text-gray-800 mb-3">De frequentie van onderhoud hangt af van <strong>gebruik</strong> en <strong>fiets type</strong>:</p>
+                        <ul class="list-none space-y-2.5 ml-0">
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Elektrische fietsen:</strong> <span class="text-gray-900 font-medium">Minimaal 1x per jaar</span> of elke <span class="text-gray-900 font-medium">2000-3000 km</span></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Stadsfietsen:</strong> <span class="text-gray-900 font-medium">1x per jaar</span> of elke <span class="text-gray-900 font-medium">1500-2000 km</span></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Racefietsen / Mountainbikes:</strong> <span class="text-gray-900 font-medium">2-3x per jaar</span> of elke <span class="text-gray-900 font-medium">1000-1500 km</span></span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-800">Na een <strong>nat seizoen</strong> of <strong>zware ritten</strong> raden we ook extra onderhoud aan. Kom gerust langs voor <span class="text-dcq-red font-medium">advies op maat</span>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item group">
+                    <button class="faq-question w-full text-left flex items-start justify-between gap-4 p-5 rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200" aria-expanded="false">
+                        <span class="font-semibold text-base text-gray-900 flex-1 leading-snug">Wat moet ik meenemen wanneer ik mijn fiets binnenbreng?</span>
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dcq-red/10 flex items-center justify-center group-hover:bg-dcq-red/20 transition-colors">
+                            <i class="fas fa-plus text-dcq-red text-xs transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-5 pt-0 pb-5 text-gray-700 text-sm leading-relaxed">
+                        <p class="text-gray-800 mb-3">Om het proces soepel te laten verlopen, raden we aan om het volgende mee te nemen:</p>
+                        <ul class="list-none space-y-2.5 ml-0">
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Uw fiets:</strong> <span class="text-gray-700">Uiteraard de fiets zelf</span></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Batterij en oplader:</strong> <span class="text-gray-700">Voor elektrische fietsen - dit helpt bij diagnostiek</span></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Fietsnummer of aankoopbewijs:</strong> <span class="text-gray-700">Handig voor garantie en onderdelen</span></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-dcq-red font-semibold mt-0.5">•</span>
+                                <span><strong class="text-gray-900">Een beschrijving van het probleem:</strong> <span class="text-gray-700">Dit helpt ons sneller de juiste diagnose te stellen</span></span>
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-800">Geen zorgen als u iets vergeet - wij kunnen altijd later <strong>contact met u opnemen</strong> indien nodig.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dcq-black text-dcq-white py-6 md:py-10">
+        <div class="container mx-auto max-w-7xl px-4 md:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mb-6 md:mb-8">
+                <div class="col-span-2 md:col-span-2">
+                    <img src="images/logo/dcqlogo_blackbackground.jpg" alt="DCQ Bikes logo" class="h-10 md:h-12 w-auto mb-3 md:mb-4 object-contain">
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed mb-3 md:mb-4">
+                        Uw betrouwbare partner voor elektrische fietsen, stadsfietsen en grasmaaiers.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://www.linkedin.com/company/dcqbikes/?originalSubdomain=be" aria-label="LinkedIn" class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-gray-800 hover:bg-dcq-red text-gray-300 hover:text-white flex items-center justify-center transition-colors" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/DCQBikes" aria-label="Facebook" class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-gray-800 hover:bg-dcq-red text-gray-300 hover:text-white flex items-center justify-center transition-colors" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-base md:text-lg mb-2 md:mb-3 tracking-tight">Navigatie</h4>
+                    <ul class="space-y-1 md:space-y-2 text-sm md:text-base text-gray-400">
+                        <li><a href="#home" class="hover:underline hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:underline hover:text-white transition-colors">Aanbod</a></li>
+                        <li><a href="#brands" class="hover:underline hover:text-white transition-colors">Merken</a></li>
+                        <li><a href="#gallery" class="hover:underline hover:text-white transition-colors">Galerij</a></li>
+                        <li><a href="#about" class="hover:underline hover:text-white transition-colors">Over Ons</a></li>
+                        <li><a href="#contact" class="hover:underline hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#faq" class="hover:underline hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-base md:text-lg mb-2 md:mb-3 tracking-tight">Juridisch</h4>
+                    <ul class="space-y-1 md:space-y-2 text-sm md:text-base text-gray-400">
+                        <li><a href="cookie-policy.html" class="hover:underline hover:text-white transition-colors">Cookiebeleid</a></li>
+                        <li><a href="privacy-policy.html" class="hover:underline hover:text-white transition-colors">Privacybeleid</a></li>
+                        <li><a href="terms-and-conditions.html" class="hover:underline hover:text-white transition-colors">Algemene Voorwaarden</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-4 md:pt-6 text-gray-400">
+                <div class="flex flex-col sm:flex-row items-center sm:items-center justify-center sm:justify-between gap-2 text-xs md:text-sm">
+                    <div class="flex flex-col sm:flex-row items-center gap-1 sm:gap-4">
+                    <p class="text-center sm:text-left">&copy; <span id="currentYear"></span> DCQ Bikes BV. Alle rechten voorbehouden.</p>
+                        <span class="hidden sm:inline">•</span>
+                        <p class="text-center sm:text-left">BTW-nummer: BE 0685.615.103</p>
+                    </div>
+                    <span class="designer-credit text-center sm:text-right text-xs">
+                        <i class="fas fa-sparkles" aria-hidden="true"></i>
+                        Design by
+                        <a href="https://www.linkedin.com/in/sanderdelobel/" target="_blank" rel="noopener">Sander de Lobel</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="store-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

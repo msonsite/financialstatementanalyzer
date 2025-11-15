@@ -44,14 +44,14 @@
 
 .tab-btn:hover {
     background: #f3f4f6;
-    color: #1f2937;
+    color: #010101;
 }
 
 .tab-btn.active {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    background: #ee2726;
     color: white;
-    border-color: #2563eb;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    border-color: #ee2726;
+    box-shadow: 0 4px 12px rgba(238, 39, 38, 0.3);
 }
 
 .tab-panel {
@@ -117,7 +117,7 @@
 /* Loading Spinner */
 .loading-spinner {
     border: 3px solid #f3f4f6;
-    border-top: 3px solid #3b82f6;
+    border-top: 3px solid #ee2726;
     border-radius: 50%;
     width: 24px;
     height: 24px;
