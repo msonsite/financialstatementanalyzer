@@ -1,0 +1,268 @@
+70,01/02/2021,BE 0685.615.103,12,EUR,,
+NAT.,Datum neerlegging,Nr.,Blz.,D.,21042.00022,MIC-kap 1
+"",,,
+Nr.,BE 0685.615.103,,MIC 2.1
+Nr.,BE 0685.615.103,MIC 3.1
+Nr.,BE 0685.615.103,MIC 3.1
+"",Toel.,Codes,Boekjaar,,Vorig boekjaar
+ACTIVA,,,,,
+OPRICHTINGSKOSTEN,,20,,,
+VASTE ACTIVA,,21/28,5.187,,5.745
+Immateriële vaste activa,6.1.1,21,1.083,,2.083
+Materiële vaste activa,6.1.2,22/27,4.104,,3.661
+Terreinen en gebouwen,,22,,,
+"Installaties, machines en uitrusting",,23,2.274,,1.966
+Meubilair en rollend materieel,,24,1.830,,1.696
+Leasing en soortgelijke rechten,,25,,,
+Overige materiële vaste activa,,26,,,
+Activa in aanbouw en vooruitbetalingen,,27,,,
+Financiële vaste activa,6.1.3,28,,,
+VLOTTENDE ACTIVA,,29/58,369.109,,315.704
+Vorderingen op meer dan één jaar,,29,,,1.200
+Handelsvorderingen,,290,,,
+Overige vorderingen,,291,,,1.200
+Voorraden en bestellingen in uitvoering,,3,52.580,,96.640
+Voorraden,,30/36,52.580,,96.640
+Bestellingen in uitvoering,,37,,,
+Vorderingen op ten hoogste één jaar,,40/41,113.511,,129.139
+Handelsvorderingen,,40,112.478,,129.021
+Overige vorderingen,,41,1.033,,118
+Geldbeleggingen,,50/53,,,
+Liquide middelen,,54/58,203.018,,88.725
+Overlopende rekeningen,,490/1,,,
+TOTAAL VAN DE ACTIVA,,20/58,374.296,,321.449
+Nr.,BE 0685.615.103,MIC 3.2
+Nr.,BE 0685.615.103,MIC 3.2
+"",,Toel.,Codes,Boekjaar,Vorig boekjaar
+PASSIVA,,,,,
+EIGEN VERMOGEN,,,10/15,115.705,76.785
+Kapitaal,,,10,,12.400
+Geplaatst kapitaal,,,100,,18.600
+Niet-opgevraagd kapitaal,,,101,,6.200
+Uitgiftepremies,,,11,12.400,
+Herwaarderingsmeerwaarden,,,12,,
+Reserves,,,13,103.305,64.385
+Wettelijke reserve,,,130,,1.860
+Onbeschikbare reserves,,,131,1.860,
+Voor eigen aandelen,,,1310,,
+Andere,,,1311,1.860,
+Belastingvrije reserves,,,132,16.286,16.286
+Beschikbare reserves,,,133,85.160,46.240
+Overgedragen winst (verlies) (+)/(-),,,14,,
+Kapitaalsubsidies,,,15,,
+Voorschot aan de vennoten op de verdeling van het,,,,,
+netto-actief,,,19,,
+VOORZIENINGEN EN UITGESTELDE,,,,,
+BELASTINGEN,,,16,,
+Voorzieningen voor risico's en kosten,,,160/5,,
+Pensioenen en soortgelijke verplichtingen,,,160,,
+Fiscale lasten,,,161,,
+Grote herstellings- en onderhoudswerken,,,162,,
+Milieuverplichtingen,,,163,,
+Overige risico's en kosten,,,164/5,,
+Uitgestelde belastingen,,,168,,
+SCHULDEN,,,17/49,258.591,244.664
+Schulden op meer dan één jaar,,,17,8.912,13.283
+Financiële schulden,,,170/4,8.912,13.283
+"Kredietinstellingen, leasingschulden en soortgelijke",,,,,
+schulden,,,172/3,8.912,13.283
+Overige leningen,,,174/0,,
+Handelsschulden,,,175,,
+Ontvangen vooruitbetalingen op bestellingen,,,176,,
+Overige schulden,,,178/9,,
+Schulden op ten hoogste één jaar,,,42/48,249.679,231.381
+Schulden op meer dan één jaar die binnen het jaar,,,,,
+vervallen,,,42,4.371,4.315
+Financiële schulden,,,43,,
+Kredietinstellingen,,,430/8,,
+Overige leningen,,,439,,
+Handelsschulden,,,44,122.736,96.664
+Leveranciers,,,440/4,122.736,96.664
+Te betalen wissels,,,441,,
+Ontvangen vooruitbetalingen op bestellingen,,,46,,5.526
+"Schulden met betrekking tot belastingen,",,,,,
+bezoldigingen en sociale lasten,,,45,81.684,47.128
+Belastingen,,,450/3,78.723,44.387
+Bezoldigingen en sociale lasten,,,454/9,2.961,2.741
+Overige schulden,,,47/48,40.888,77.748
+Overlopende rekeningen,,,492/3,,
+TOTAAL VAN DE PASSIVA,,,10/49,374.296,321.449
+Nr.,BE 0685.615.103,MIC 4
+Nr.,BE 0685.615.103,MIC 4
+"",,Toel.,Codes,Boekjaar,Vorig boekjaar
+Bedrijfsopbrengsten en bedrijfskosten,,,,,
+Brutomarge (+)/(-),,,9900,111.701,117.248
+Waarvan: niet-recurrente bedrijfsopbrengsten,,,76A,,87
+Omzet,,,70,,
+"Handelsgoederen, grond- en hulpstoffen, diensten",,,,,
+en diverse goederen,,,60/61,,
+"Bezoldigingen, sociale lasten en pensioenen (+)/(-)",,,62,48.629,54.736
+Afschrijvingen en waardeverminderingen op,,,,,
+"oprichtingskosten, op immateriële en materiële vaste",,,,,
+activa,,,630,3.318,7.680
+"Waardeverminderingen op voorraden, op bestellingen",,,,,
+in uitvoering en op handelsvorderingen: toevoegingen,,,,,
+"(terugnemingen) (+)/(-)",,,631/4,,
+Voorzieningen voor risico's en kosten: toevoegingen,,,,,
+"(bestedingen en terugnemingen) (+)/(-)",,,635/8,,
+Andere bedrijfskosten,,,640/8,151,669
+Als herstructureringskosten geactiveerde,,,,,
+bedrijfskosten (-),,,649,,
+Niet-recurrente bedrijfskosten,,,66A,,399
+Bedrijfswinst (Bedrijfsverlies) (+)/(-),,,9901,59.604,53.764
+Financiële opbrengsten,,,75/76B,79,3
+Recurrente financiële opbrengsten,,,75,79,3
+Waarvan: kapitaal- en interestsubsidies,,,753,,
+Niet-recurrente financiële opbrengsten,,,76B,,
+Financiële kosten,,,65/66B,1.354,940
+Recurrente financiële kosten,,,65,1.354,940
+Niet-recurrente financiële kosten,,,66B,,
+Winst (Verlies) van het boekjaar vóór belasting (+)/(-),,,9903,58.328,52.826
+Onttrekking aan de uitgestelde belastingen,,,780,,
+Overboeking naar de uitgestelde belastingen,,,680,,
+Belastingen op het resultaat (+)/(-),,,67/77,19.408,19.532
+Winst (Verlies) van het boekjaar (+)/(-),,,9904,38.920,33.295
+Onttrekking aan de belastingvrije reserves,,,789,,
+Overboeking naar de belastingvrije reserves,,,689,,
+Te bestemmen winst (verlies) van het boekjaar (+)/(-),,,9905,38.920,33.295
+Nr.,BE 0685.615.103,MIC 5
+Nr.,BE 0685.615.103,MIC 5
+"",,Codes,Boekjaar,,Vorig boekjaar
+Te bestemmen winst (verlies),(+)/(-),9906,,38.920,33.295
+Te bestemmen winst (verlies) van het boekjaar,(+)/(-),9905,,38.920,33.295
+Overgedragen winst (verlies) van het vorige boekjaar,(+)/(-),14P,,,
+Onttrekking aan het eigen vermogen,,791/2,,,
+Toevoeging aan het eigen vermogen,,691/2,,38.920,33.295
+aan het kapitaal en aan de uitgiftepremies,,691,,,
+aan de wettelijke reserve,,6920,,,
+aan de overige reserves,,6921,,38.920,33.295
+Over te dragen winst (verlies),(+)/(-),14,,,
+Tussenkomst van de vennoten in het verlies,,794,,,
+Uit te keren winst,,694/7,,,
+Vergoeding van het kapitaal,,694,,,
+Bestuurders of zaakvoerders,,695,,,
+Werknemers,,696,,,
+Andere rechthebbenden,,697,,,
+Nr.,BE 0685.615.103,MIC 6.1.
+Nr.,BE 0685.615.103,MIC 6.1.1
+"",Codes,Boekjaar,Vorig boekjaar
+IMMATERIËLE VASTE ACTIVA,,,
+Aanschaffingswaarde per einde van het boekjaar,8059P,XXXXXXXXXX,5.000
+Mutaties tijdens het boekjaar,,,
+"Aanschaffingen, met inbegrip van de geproduceerde vaste activa",8029,,
+Overdrachten en buitengebruikstellingen,8039,,
+Overboekingen van een post naar een andere (+)/(-),8049,,
+Aanschaffingswaarde per einde van het boekjaar,8059,5.000,
+Afschrijvingen en waardeverminderingen per einde van het,,,
+boekjaar,8129P,XXXXXXXXXX,2.917
+Mutaties tijdens het boekjaar,,,
+Geboekt,8079,1.000,
+Teruggenomen,8089,,
+Verworven van derden,8099,,
+Afgeboekt na overdrachten en buitengebruikstellingen,8109,,
+Overgeboekt van een post naar een andere (+)/(-),8119,,
+Afschrijvingen en waardeverminderingen per einde van het,,,
+boekjaar,8129,3.917,
+NETTOBOEKWAARDE PER EINDE VAN HET BOEKJAAR,21,1.083,
+Nr.,BE 0685.615.103,MIC 6.1.
+Nr.,BE 0685.615.103,MIC 6.1.2
+"",Codes,Boekjaar,Vorig boekjaar
+MATERIËLE VASTE ACTIVA,,,
+Aanschaffingswaarde per einde van het boekjaar,8199P,XXXXXXXXXX,29.016
+Mutaties tijdens het boekjaar,,,
+"Aanschaffingen, met inbegrip van de geproduceerde vaste activa",8169,2.760,
+Overdrachten en buitengebruikstellingen,8179,,
+Overboekingen van een post naar een andere (+)/(-),8189,,
+Aanschaffingswaarde per einde van het boekjaar,8199,31.776,
+Meerwaarden per einde van het boekjaar,8259P,XXXXXXXXXX,
+Mutaties tijdens het boekjaar,,,
+Geboekt,8219,,
+Verworven van derden,8229,,
+Afgeboekt,8239,,
+Overgeboekt van een post naar een andere (+)/(-),8249,,
+Meerwaarden per einde van het boekjaar,8259,,
+Afschrijvingen en waardeverminderingen per einde van het,,,
+boekjaar,8329P,XXXXXXXXXX,25.354
+Mutaties tijdens het boekjaar,,,
+Geboekt,8279,2.318,
+Teruggenomen,8289,,
+Verworven van derden,8299,,
+Afgeboekt na overdrachten en buitengebruikstellingen,8309,,
+Overgeboekt van een post naar een andere (+)/(-),8319,,
+Afschrijvingen en waardeverminderingen per einde van het,,,
+boekjaar,8329,27.672,
+NETTOBOEKWAARDE PER EINDE VAN HET BOEKJAAR,22/27,4.104,
+"",,,
+Nr.,BE 0685.615.103,,MIC 6.5
+Nr.,BE 0685.615.103,MIC 11
+Nr.,BE 0685.615.103,MIC 11
+"",Codes,1.,Voltijds,2.,Deeltijds,,3.,Totaal (T),,3P.,Totaal (T) of
+Tijdens het boekjaar en het vorige,,,,,,,,of totaal in,,,totaal in voltijdse
+boekjaar,,,,,,,,voltijdse,,,equivalenten
+"",,,,,,,,equivalenten,,,(VTE)
+"",,,,,,,,(VTE),,,
+"",,,(boekjaar),,(boekjaar),,,(boekjaar),,,(vorig boekjaar)
+Gemiddeld aantal werknemers,100,,,,2,,,"1,5",VTE,,"1,5 VTE"
+Aantal daadwerkelijk gepresteerde,,,,,,,,,,,
+uren,101,,,,1.762,,,1.762,T,,2.246 T
+Personeelskosten,102,,,,45.857,,,45.857,T,,54.736 T
+"",Codes,,,,,,,,
+Op de afsluitingsdatum van het boekjaar,,1.,Voltijds,2.,Deeltijds,,3.,Totaal in,
+"",,,,,,,,voltijdse,
+"",,,,,,,,equivalenten,
+Aantal werknemers,105,,,,,2,,,"1,5"
+Volgens de aard van de arbeidsovereenkomst,,,,,,,,,
+Overeenkomst voor een onbepaalde tijd,110,,,,,2,,,"1,5"
+Overeenkomst voor een bepaalde tijd,111,,,,,,,,
+Overeenkomst voor een duidelijk omschreven werk,112,,,,,,,,
+Vervangingsovereenkomst,113,,,,,,,,
+Volgens het geslacht en het studieniveau,,,,,,,,,
+Mannen,120,,,,,2,,,"1,5"
+lager onderwijs,1200,,,,,1,,,1
+secundair onderwijs,1201,,,,,1,,,"0,5"
+hoger niet-universitair onderwijs,1202,,,,,,,,
+universitair onderwijs,1203,,,,,,,,
+Vrouwen,121,,,,,,,,
+lager onderwijs,1210,,,,,,,,
+secundair onderwijs,1211,,,,,,,,
+hoger niet-universitair onderwijs,1212,,,,,,,,
+universitair onderwijs,1213,,,,,,,,
+Volgens de beroepscategorie,,,,,,,,,
+Directiepersoneel,130,,,,,,,,
+Bedienden,134,,,,,,,,
+Arbeiders,132,,,,,2,,,"1,5"
+Andere,133,,,,,,,,
+Nr.,BE 0685.615.103,MIC 11
+Nr.,BE 0685.615.103,MIC 11
+"",Codes,1.,Voltijds,2.,Deeltijds,3.,Totaal in
+"",,,,,,,voltijdse
+"",,,,,,,equivalenten
+Ingetreden,,,,,,,
+Aantal werknemers waarvoor de onderneming tijdens het,,,,,,,
+boekjaar een DIMONA-verklaring heeft ingediend of die,,,,,,,
+tijdens het boekjaar werden ingeschreven in het algemeen,,,,,,,
+personeelsregister,205,,,,,,
+Uitgetreden,,,,,,,
+Aantal werknemers met een in de DIMONA-verklaring,,,,,,,
+aangegeven of een in het algemeen personeelsregister,,,,,,,
+opgetekende datum waarop hun overeenkomst tijdens het,,,,,,,
+boekjaar een einde nam,305,,,,,,
+"",Codes,Mannen,Codes,Vrouwen
+Totaal van de formele voortgezette beroepsopleidingsinitiatieven ten,,,,
+laste van de werkgever,,,,
+Aantal betrokken werknemers,5801,,5811,
+Aantal gevolgde opleidingsuren,5802,,5812,
+Nettokosten voor de onderneming,5803,,5813,
+waarvan brutokosten rechtstreeks verbonden met de opleiding,58031,,58131,
+waarvan betaalde bijdragen en stortingen aan collectieve fondsen,58032,,58132,
+waarvan ontvangen tegemoetkomingen (in mindering),58033,,58133,
+Totaal van de minder formele en informele voortgezette,,,,
+beroepsopleidingsinitiatieven ten laste van de werkgever,,,,
+Aantal betrokken werknemers,5821,,5831,
+Aantal gevolgde opleidingsuren,5822,,5832,
+Nettokosten voor de onderneming,5823,,5833,
+Totaal van de initiële beroepsopleidingsinitiatieven ten laste van de,,,,
+werkgever,,,,
+Aantal betrokken werknemers,5841,,5851,
+Aantal gevolgde opleidingsuren,5842,,5852,
+Nettokosten voor de onderneming,5843,,5853,
